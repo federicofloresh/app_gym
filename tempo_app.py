@@ -1,6 +1,8 @@
 import streamlit as st
 import psycopg2
 
+'''
+
 # Crear una conexión a la base de datos PostgreSQL
 conn = psycopg2.connect(
     host="tu_host",
@@ -15,6 +17,8 @@ def insertar_transaccion(cantidad, descripcion):
     cursor.execute("INSERT INTO transacciones (cantidad, descripcion) VALUES (%s, %s)", (cantidad, descripcion))
     conn.commit()
     cursor.close()
+
+'''
 
 # Definir la aplicación de Streamlit
 def main():
@@ -31,8 +35,10 @@ def main():
         descripcion = st.text_area("Descripción:")
         if st.button("Guardar Transacción"):
             if cantidad and descripcion:
-                insertar_transaccion(cantidad, descripcion)
-                st.success("Transacción guardada con éxito.")
+                #insertar_transaccion(cantidad, descripcion)
+                #st.success("Transacción guardada con éxito.")
+
+                st.write("PEPE")
             else:
                 st.warning("Por favor, complete todos los campos.")
 
